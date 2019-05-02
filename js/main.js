@@ -1,4 +1,17 @@
 $(function(){
+    //ted dulezite
+
+    //mouseenter
+    $('.objekt').on('mouseenter',function(){
+        $(this).attr({'style':'fill:rgba(0,255,0,0.15);stroke:rgba(0,255,0,0.15)'});
+        $('#nazev').text($(this).data('nazev'));
+    })
+    //mouseleave
+    $('.objekt').on('mouseleave',function(){
+        $(this).attr({'style':'fill:rgba(0,255,0,0.1);stroke:rgba(0,255,0,0.1)'});
+    })
+
+    //ted nedulezite
     $('#ustava p').hide();
     $('#ustava h4').on('click', function(){
         if ($(this).nextUntil('h4').is(':hidden')) {
