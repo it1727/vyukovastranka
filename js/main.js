@@ -1,17 +1,13 @@
 $(function(){
-    //ted dulezite
-
-    //mouseenter
     $('.objekt').on('mouseenter',function(){
-        $(this).attr({'style':'fill:rgba(0,255,0,0.15);stroke:rgba(0,255,0,0.15)'});
+        $(this).attr({'style':'fill:rgba(0,0,0,0.4);stroke:rgba(0,0,0,1)'});
         $('#nazev').text($(this).data('nazev'));
     })
-    //mouseleave
+
     $('.objekt').on('mouseleave',function(){
-        $(this).attr({'style':'fill:rgba(0,255,0,0.1);stroke:rgba(0,255,0,0.1)'});
+        $(this).attr({'style':'fill:rgba(255,255,255,0.6);stroke:rgba(0,0,0,0.4)'});
     })
 
-    //ted nedulezite
     $('#ustava p').hide();
     $('#ustava h4').on('click', function(){
         if ($(this).nextUntil('h4').is(':hidden')) {
