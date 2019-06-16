@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "bitva": "Bitva u Stalingradu",
+    "vitez": "Sovětský svaz",
+    "loser": "Nacistické Německo",
+    "doba": "1943",
+    "vitezvel": "Vasilij Čujkov",
+    "loservel": "Friedrich Paulus"
+  },
+  {
+    "id": 2,
+    "bitva": "Boj o Český rozhlas",
+    "vitez": "Československo",
+    "loser": "Nacistické Německo",
+    "doba": "1945",
+    "vitezvel": "Jaroslav Záruba",
+    "loservel": "nedá se určit"
+  },
+  {
+    "id": 3,
+    "bitva": "Bitva o Británii",
+    "vitez": "Velká Británie",
+    "loser": "Nacistické Německo",
+    "doba": "1940",
+    "vitezvel": "Hugh Downing",
+    "loservel": "Herman Goring"
+  }
+]

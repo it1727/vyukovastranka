@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="cs">
+
+<head>
+  <title>Bitvy</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <header class="jumbotron-fluid bg-success p-5">
+    <h1 class="text-center display-3 text-white">Bitvy Druhé světové války</h1>
+  </header>
+  <main class="container-fluid">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>ID</th> 
+          <th>Bitva</th>
+          <th>Vítěz</th>
+          <th>Poražený</th>
+          <th>Trvání</th>
+          <th>Vítěžný velitel</th>
+          <th>Poražený velitel</th>
+        </tr>
+      </thead>
+      <tbody id="list">
+      </tbody>
+    </table>
+    <!-- Modal dialog pro zápis filmu -->
+    <!-- Button trigger modal -->
+    <button type="button" id="create" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
+      Nový záznam
+    </button>
+  </main>
+  <!-- Modal -->
+  <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-light">
+          <h5 class="modal-title">Karta filmu</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" class="text-light">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <form>
+                <div class="form-group row" style="display:none">
+                    <label for="id" class="col-sm-3 col-form-label">ID</label>
+                    <div class="col-sm-9">
+                      <input type="hidden" class="form-control" name="id" id="id">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="bitva" class="col-sm-3 col-form-label">Bitva</label> <div class="col-sm-9">
+                      <input type="text" class="form-control" name="bitva" id="bitva">
+                    </div>
+                  </div>
+              <div class="form-group row">
+                <label for="vitez" class="col-sm-3 col-form-label">Vítěz</label>
+                <div class="col-sm-9">
+                    <select class="custom-select" name="vitez" id="vitez">
+                      <option value="Československo">Československo</option>
+                      <option value="Francie">Francie</option>
+                      <option value="Itálie">Itálie</option>
+                      <option value="USA">USA</option>
+                      <option value="Velká Británie">Velká Británie</option>
+                      <option value="Sovětský svaz">Sovětský svaz</option>
+                      <option value="Nacistické Německo">Nacistické Německo</option>
+                      <option value="Polsko">Polsko</option>
+                      <option value="Finsko">Finsko</option>
+                    </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="loser" class="col-sm-3 col-form-label">Poražený</label>
+                <div class="col-sm-9">
+                    <select class="custom-select" name="loser" id="loser">
+                      <option value="Československo">Československo</option>
+                      <option value="Francie">Francie</option>
+                      <option value="Itálie">Itálie</option>
+                      <option value="USA">USA</option>
+                      <option value="Velká Británie">Velká Británie</option>
+                      <option value="Sovětský svaz">Sovětský svaz</option>
+                      <option value="Nacistické Německo">Nacistické Německo</option>
+                      <option value="Polsko">Polsko</option>
+                      <option value="Finsko">Finsko</option>
+                    </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="doba" class="col-sm-3 col-form-label">Trvání</label>
+                <div class="col-sm-9">
+                  <input type="number" class="form-control" name="doba" id="doba">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="vitezvel" class="col-sm-3 col-form-label">Vítěžný velitel</label> <div class="col-sm-9">
+                  <input type="text" class="form-control" name="vitezvel" id="vitezvel">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="loservel" class="col-sm-3 col-form-label">Poražený velitel</label> <div class="col-sm-9">
+                  <input type="text" class="form-control" name="loservel" id="loservel">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="content" class="col-sm-3 col-form-label">Popis</label>
+                <div class="col-sm-9">
+                  <textarea row="5" class="form-control" name="content" id="content"></textarea>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer bg-light">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Zrušit</button>
+          <button type="button" id="submit" class="btn btn-info" data-dismiss="modal">Uložit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
